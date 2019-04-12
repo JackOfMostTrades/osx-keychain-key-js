@@ -1,6 +1,6 @@
 {
   "name": "osx-keychain-key",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node bindings for OSX keychain keys.",
   "author": "Ian Haken",
   "repository": {
