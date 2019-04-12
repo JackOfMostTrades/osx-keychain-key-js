@@ -1,6 +1,6 @@
 export class OsxKeychainKey {
     constructor(useSecureEnclave?: boolean)
     generate(): void;
-    getPublicKey(): Buffer;
-    sign(digest: Buffer): Buffer;
+    getPublicKey(): Uint8Array;
+    sign(digest: Uint8Array): Uint8Array;
 }
