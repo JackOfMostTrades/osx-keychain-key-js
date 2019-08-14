@@ -14,6 +14,11 @@ void keychainGenerate(bool useSecureEnclave, SecKeyRef *publicKey, SecKeyRef *pr
 	*publicKey = NULL;
 	*privateKey = NULL;
 
+	// The keychain APIs used below only work in MacOS versions >= 10.12.0
+    if (kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber10_11_Max) {
+        return;
+    }
+
 	access = SecAccessControlCreateWithFlags(kCFAllocatorDefault,
 		kSecAttrAccessibleAlwaysThisDeviceOnly,
 		kSecAccessControlPrivateKeyUsage,
